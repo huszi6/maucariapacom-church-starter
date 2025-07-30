@@ -24,7 +24,7 @@ pnpm-debug.log*
 .idea/
 
 # TinaCMS
-.tina/__generated__/
+
 public/admin/
-tina/__generated__/
+
 .env.local

@@ -1,0 +1,75 @@
+fragment StaffParts on Staff {
+  __typename
+  name
+  title
+  image
+  email
+  phone
+  bio
+  order
+  draft
+}
+
+fragment EventsParts on Events {
+  __typename
+  title
+  date
+  endDate
+  time
+  location
+  image
+  summary
+  tags
+  registrationLink
+  registrationRequired
+  draft
+}
+
+fragment SermonsParts on Sermons {
+  __typename
+  title
+  slug
+  date
+  speaker
+  series
+  scripture
+  audioUrl
+  videoUrl
+  image
+  summary
+  tags
+  draft
+}
+
+fragment MinistriesParts on Ministries {
+  __typename
+  name
+  logo
+  summary
+  coordinator
+  contact
+  schedule
+  order
+  draft
+}
+
+fragment BlogParts on Blog {
+  __typename
+  title
+  slug
+  pubDate
+  description
+  author
+  image {
+    __typename
+    url
+    alt
+  }
+  tags
+  draft
+}
+
+fragment SiteInfoParts on SiteInfo {
+  __typename
+  title
+}
