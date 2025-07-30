@@ -259,7 +259,7 @@ export type Staff = Node & Document & {
   __typename?: 'Staff';
   name: Scalars['String']['output'];
   title: Scalars['String']['output'];
-  image: Scalars['String']['output'];
+  image?: Maybe<Scalars['String']['output']>;
   email?: Maybe<Scalars['String']['output']>;
   phone?: Maybe<Scalars['String']['output']>;
   bio?: Maybe<Scalars['String']['output']>;
@@ -753,7 +753,7 @@ export type SiteInfoMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
 };
 
-export type StaffPartsFragment = { __typename: 'Staff', name: string, title: string, image: string, email?: string | null, phone?: string | null, bio?: string | null, order?: number | null, draft?: boolean | null };
+export type StaffPartsFragment = { __typename: 'Staff', name: string, title: string, image?: string | null, email?: string | null, phone?: string | null, bio?: string | null, order?: number | null, draft?: boolean | null };
 
 export type EventsPartsFragment = { __typename: 'Events', title: string, date: string, endDate?: string | null, time?: string | null, location: string, image: string, summary: string, tags?: Array<string | null> | null, registrationLink?: string | null, registrationRequired?: boolean | null, draft?: boolean | null };
 
@@ -770,7 +770,7 @@ export type StaffQueryVariables = Exact<{
 }>;
 
 
-export type StaffQuery = { __typename?: 'Query', staff: { __typename: 'Staff', id: string, name: string, title: string, image: string, email?: string | null, phone?: string | null, bio?: string | null, order?: number | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
+export type StaffQuery = { __typename?: 'Query', staff: { __typename: 'Staff', id: string, name: string, title: string, image?: string | null, email?: string | null, phone?: string | null, bio?: string | null, order?: number | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } };
 
 export type StaffConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -782,7 +782,7 @@ export type StaffConnectionQueryVariables = Exact<{
 }>;
 
 
-export type StaffConnectionQuery = { __typename?: 'Query', staffConnection: { __typename?: 'StaffConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'StaffConnectionEdges', cursor: string, node?: { __typename: 'Staff', id: string, name: string, title: string, image: string, email?: string | null, phone?: string | null, bio?: string | null, order?: number | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
+export type StaffConnectionQuery = { __typename?: 'Query', staffConnection: { __typename?: 'StaffConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'StaffConnectionEdges', cursor: string, node?: { __typename: 'Staff', id: string, name: string, title: string, image?: string | null, email?: string | null, phone?: string | null, bio?: string | null, order?: number | null, draft?: boolean | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string } } | null } | null> | null } };
 
 export type EventsQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -1389,7 +1389,7 @@ export const ExperimentalGetTinaClient = () =>
   getSdk(
     generateRequester(
       createClient({
-        url: "https://content.tinajs.io/1.6/content/8011c0a6-7c87-45ac-9dcc-7e97f25065f7/github/main",
+        url: "http://localhost:4001/graphql",
         queries,
       })
     )

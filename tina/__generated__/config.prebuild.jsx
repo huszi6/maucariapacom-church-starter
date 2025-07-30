@@ -44,7 +44,7 @@ var config_default = defineConfig({
             type: "image",
             name: "image",
             label: "Profile Image",
-            required: true
+            required: false
           },
           {
             type: "string",
