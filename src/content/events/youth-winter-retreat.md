@@ -41,3 +41,9 @@ Join us for an unforgettable weekend as we explore what it means to have an unsh
 Space is limited to 100 students. Register early to secure your spot!
 
 *Parent/guardian permission form required for all participants.*
+
+### Schedule Highlights
+
+- **Friday Evening**: Arrival, dinner, opening session
+- **Saturday**: Morning worship, workshops, winter activities, evening worship
+- **Sunday**: Closing session, lunch, departure
