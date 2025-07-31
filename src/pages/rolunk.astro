@@ -1,0 +1,242 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/Sections/PageHeader.astro";
+import StaffList from "../components/Sections/StaffList.astro";
+---
+
+<BaseLayout
+  title="Rólunk | Magyar Katolikus Püspöki Konferencia"
+  description="Ismerje meg a Magyar Katolikus Püspöki Konferencia történetét, küldetését és értékeit."
+>
+  <PageHeader 
+    title="Rólunk" 
+    subtitle="Bemutatkozunk"
+    backgroundImage="/uploads/page-header-bg.webp"
+  />
+  
+  <!-- Introduction -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center mb-12">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-primary-100 rounded-full mb-6">
+          <svg class="w-10 h-10 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Bemutatkozunk</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Az egyház, amely az evangelizáció gyümölcseként született, maga is az evangelizáció feladatát kapja 
+          Jézustól. Jézus visszatér az Atyához, de egyházát hagyja itt saját követeként. Öbenne Krisztus élete 
+          folytatódik. Elsősorban az a hivatása, hogy az ő küldetését, az ő evangelizáló művét folytassa.
+        </p>
+      </div>
+
+      <div class="prose prose-lg max-w-4xl mx-auto">
+        <p class="text-gray-700 mb-6">
+          Ebbe a küldetésbe kiemelt módon kapcsolódik be minden katekéta tanító szolgálata során – legyen az a 
+          plébániai közösségben, az óvoda vagy iskola falai között vagy az e-oktatás útján, a világhálon. A cél mindig 
+          ugyanaz marad: minden embernek Krisztust hirdetni, aki önmaga is az Isten örömhíre, megváltásunk 
+          üzenete.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Mission & Vision -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Küldetésünk</h2>
+          <p class="text-xl text-gray-700 mb-8">
+            A Magyar Katolikus Püspöki Konferencia Hitoktatási Bizottsága küldetése, hogy támogassa és koordinálja 
+            a hitoktatást Magyarországon, valamint segítse a katekéták képzését és továbbképzését.
+          </p>
+          
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Víziónk</h2>
+          <p class="text-xl text-gray-700 mb-8">
+            Egy olyan egyházi közösség kialakítása, ahol minden hívő képes és felkészült arra, hogy 
+            hitét megélje és továbbadja a mai kor kihívásai között.
+          </p>
+        </div>
+        
+        <div>
+          <img 
+            src="/uploads/church-default.webp" 
+            alt="Magyar Katolikus Egyház" 
+            class="rounded-lg shadow-lg object-cover w-full h-full"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Core Values -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Alapértékeink</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Ezek az elvek vezérlik minden tevékenységünket és szolgálatunkat
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+          <div class="w-16 h-16 rounded-full bg-primary-100 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Hűség a Tanításhoz</h3>
+          <p class="text-gray-700">
+            Elkötelezettek vagyunk a katolikus egyház tanításának hű továbbadása iránt, 
+            a Szentírás és a Hagyomány alapján.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+          <div class="w-16 h-16 rounded-full bg-secondary-100 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-secondary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Közösségi Szellem</h3>
+          <p class="text-gray-700">
+            Hiszünk abban, hogy a hit közösségben él és erősödik. Támogatjuk a helyi egyházközségek 
+            és a katekéták közötti együttműködést.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+          <div class="w-16 h-16 rounded-full bg-accent-100 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Folyamatos Képzés</h3>
+          <p class="text-gray-700">
+            Elkötelezettek vagyunk a katekéták és hitoktatók folyamatos képzése és 
+            továbbképzése iránt a modern kor kihívásainak megfelelően.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+          <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Szeretetteljes Szolgálat</h3>
+          <p class="text-gray-700">
+            Minden tevékenységünket a keresztény szeretet vezérli, különös figyelmet 
+            fordítva a gyermekekre, fiatalokra és családokra.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+          <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Nyitottság</h3>
+          <p class="text-gray-700">
+            Nyitottak vagyunk a modern pedagógiai módszerekre és technológiákra, 
+            hogy hatékonyan tudjuk szolgálni korunk emberét.
+          </p>
+        </div>
+        
+        <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+          <div class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Remény</h3>
+          <p class="text-gray-700">
+            Hiszünk abban, hogy Krisztus evangéliuma ma is képes megváltoztatni 
+            az emberek szívét és a világot.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Organization Structure -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Szervezeti Felépítés</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          A Magyar Katolikus Püspöki Konferencia Hitoktatási Bizottságának felépítése
+        </p>
+      </div>
+      
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Magyar Katolikus Püspöki Konferencia</h3>
+          <p class="text-gray-700 mb-6">
+            A Magyar Katolikus Püspöki Konferencia Magyarország katolikus püspökeinek közössége, 
+            amely koordinálja az egyházi élet különböző területeit.
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="border-l-4 border-primary-500 pl-4">
+              <h4 class="font-semibold text-gray-900 mb-2">Hitoktatási Bizottság</h4>
+              <p class="text-gray-600 text-sm">
+                A hitoktatás koordinálásáért és fejlesztéséért felelős bizottság
+              </p>
+            </div>
+            <div class="border-l-4 border-secondary-500 pl-4">
+              <h4 class="font-semibold text-gray-900 mb-2">Egyházmegyei Kapcsolatok</h4>
+              <p class="text-gray-600 text-sm">
+                Szoros együttműködés az egyházmegyékkel és plébániákkal
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership Team Preview -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Munkatársaink</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Elkötelezett munkatársaink, akik szolgálják a hitoktatás ügyét
+        </p>
+      </div>
+      
+      <!-- Show staff list -->
+      <StaffList showAll={true} />
+    </div>
+  </section>
+  
+  <!-- Contact Call to Action -->
+  <section class="py-16 bg-primary-600 text-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-4">Kapcsolatfelvétel</h2>
+      <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+        Ha kérdése van, vagy szeretne kapcsolatba lépni velünk, 
+        forduljon hozzánk bizalommal.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/kapcsolatok"
+          class="bg-white text-primary-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium"
+        >
+          Kapcsolatfelvétel
+        </a>
+        <a
+          href="/aktualis"
+          class="border border-white text-white px-8 py-3 rounded-lg hover:bg-primary-700 transition-colors font-medium"
+        >
+          Aktuális Hírek
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

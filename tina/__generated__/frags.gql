@@ -2,7 +2,6 @@ fragment StaffParts on Staff {
   __typename
   name
   title
-  image
   email
   phone
   bio

@@ -1,0 +1,185 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/Sections/PageHeader.astro";
+import { getCollection } from "astro:content";
+
+// Get training/education events (we'll use events collection for now)
+const allTrainings = await getCollection("events", ({ data }) =>
+  import.meta.env.PROD ? !data.draft : true
+);
+const trainingEvents = allTrainings
+  .filter(event => event.data.tags?.includes("képzés") || event.data.tags?.includes("oktatás"))
+  .sort((a, b) => new Date(a.data.date).valueOf() - new Date(b.data.date).valueOf());
+---
+
+<BaseLayout
+  title="Képzések | Magyar Katolikus Püspöki Konferencia"
+  description="Képzési programok és oktatási lehetőségek a Magyar Katolikus Püspöki Konferenciától"
+>
+  <PageHeader
+    title="Képzések"
+    subtitle="Oktatási programok és továbbképzési lehetőségek"
+    backgroundImage="/uploads/page-header-bg.webp"
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <!-- Introduction -->
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Képzési Programjaink</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            A Magyar Katolikus Püspöki Konferencia különböző képzési programokat és továbbképzési lehetőségeket kínál 
+            papok, diakónusok, katekéták és laikusok számára.
+          </p>
+        </div>
+
+        {trainingEvents.length > 0 ? (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {trainingEvents.map((training) => (
+              <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow">
+                <div class="aspect-video w-full overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200">
+                  <img
+                    src={training.data.image}
+                    alt={training.data.title}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="p-6">
+                  <div class="flex items-center text-sm text-gray-500 mb-3">
+                    <time datetime={training.data.date.toISOString()}>
+                      {training.data.date.toLocaleDateString('hu-HU', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                      })}
+                    </time>
+                    {training.data.time && (
+                      <>
+                        <span class="mx-2">•</span>
+                        <span>{training.data.time}</span>
+                      </>
+                    )}
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">
+                    {training.data.title}
+                  </h3>
+                  <p class="text-gray-700 mb-4 text-sm leading-relaxed">
+                    {training.data.summary}
+                  </p>
+                  <div class="flex items-center justify-between text-sm">
+                    <span class="text-gray-600">
+                      📍 {training.data.location}
+                    </span>
+                    {training.data.registrationRequired && (
+                      <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs">
+                        Regisztráció szükséges
+                      </span>
+                    )}
+                  </div>
+                  {training.data.registrationLink && (
+                    <div class="mt-4">
+                      <a
+                        href={training.data.registrationLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="w-full bg-primary-600 text-white px-4 py-2 rounded-lg hover:bg-primary-700 transition-colors text-center block"
+                      >
+                        Jelentkezés
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Sample training programs -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+              <div class="aspect-video w-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                <div class="text-center">
+                  <svg class="mx-auto h-12 w-12 text-blue-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  <p class="text-blue-600 font-medium">Katekéta Képzés</p>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Katekéta Alapképzés</h3>
+                <p class="text-gray-700 mb-4 text-sm leading-relaxed">
+                  Alapfokú katekéta képzés azok számára, akik szeretnének részt venni a hitoktatásban és a közösségépítésben.
+                </p>
+                <div class="text-sm text-gray-600">
+                  📍 Budapest, Központi Szeminárium
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+              <div class="aspect-video w-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+                <div class="text-center">
+                  <svg class="mx-auto h-12 w-12 text-green-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  <p class="text-green-600 font-medium">Lelkipásztori Képzés</p>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Lelkipásztori Továbbképzés</h3>
+                <p class="text-gray-700 mb-4 text-sm leading-relaxed">
+                  Folyamatos képzési program papok és diakónusok számára a modern lelkipásztori kihívások megoldására.
+                </p>
+                <div class="text-sm text-gray-600">
+                  📍 Különböző helyszínek
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200">
+              <div class="aspect-video w-full bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
+                <div class="text-center">
+                  <svg class="mx-auto h-12 w-12 text-purple-600 mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                  <p class="text-purple-600 font-medium">Teológiai Képzés</p>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-gray-900 mb-3">Teológiai Tanfolyamok</h3>
+                <p class="text-gray-700 mb-4 text-sm leading-relaxed">
+                  Teológiai alapismeretek és elmélyítő tanfolyamok laikusok és egyházi személyek számára.
+                </p>
+                <div class="text-sm text-gray-600">
+                  📍 Online és jelenléti oktatás
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <!-- Contact Information -->
+        <div class="mt-16 bg-gray-50 rounded-lg p-8 text-center">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">További Információk</h3>
+          <p class="text-gray-600 mb-6">
+            Ha érdeklődik képzési programjaink iránt, vagy kérdése van, vegye fel velünk a kapcsolatot.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/kapcsolatok"
+              class="bg-primary-600 text-white px-6 py-3 rounded-lg hover:bg-primary-700 transition-colors"
+            >
+              Kapcsolatfelvétel
+            </a>
+            <a
+              href="/aktualis"
+              class="border border-primary-600 text-primary-600 px-6 py-3 rounded-lg hover:bg-primary-50 transition-colors"
+            >
+              Aktuális Hírek
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

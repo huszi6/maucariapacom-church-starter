@@ -41,12 +41,6 @@ var config_default = defineConfig({
             description: "e.g., Senior Pastor, Deaconess"
           },
           {
-            type: "image",
-            name: "image",
-            label: "Profile Image",
-            required: false
-          },
-          {
             type: "string",
             name: "email",
             label: "Email",

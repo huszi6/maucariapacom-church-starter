@@ -1,7 +1,7 @@
 ---
 name: teszt
 title: Senior Pastor
-image: /uploads/blog-header-bg.webp
+image: ''
 email: teaszt@asd.gh
 phone: asdasd
 bio: asdsadasddgffdgdgdsgdfg

@@ -105,7 +105,6 @@ union DocumentNode = Staff | Events | Sermons | Ministries | Blog | SiteInfo | F
 type Staff implements Node & Document {
   name: String!
   title: String!
-  image: String
   email: String
   phone: String
   bio: String
@@ -117,13 +116,6 @@ type Staff implements Node & Document {
 }
 
 input StringFilter {
-  startsWith: String
-  eq: String
-  exists: Boolean
-  in: [String]
-}
-
-input ImageFilter {
   startsWith: String
   eq: String
   exists: Boolean
@@ -148,7 +140,6 @@ input BooleanFilter {
 input StaffFilter {
   name: StringFilter
   title: StringFilter
-  image: ImageFilter
   email: StringFilter
   phone: StringFilter
   bio: StringFilter
@@ -187,6 +178,13 @@ type Events implements Node & Document {
 input DatetimeFilter {
   after: String
   before: String
+  eq: String
+  exists: Boolean
+  in: [String]
+}
+
+input ImageFilter {
+  startsWith: String
   eq: String
   exists: Boolean
   in: [String]
@@ -407,7 +405,6 @@ input DocumentMutation {
 input StaffMutation {
   name: String
   title: String
-  image: String
   email: String
   phone: String
   bio: String
